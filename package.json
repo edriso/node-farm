@@ -1,0 +1,26 @@
+{
+  "name": "farm",
+  "version": "1.0.0",
+  "description": "A small project on Jonas's course where I learned about templating on nodejs, how to get data from url, routing, make a condition based on some data!",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edriso/node-farm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edriso/node-farm/issues"
+  },
+  "homepage": "https://github.com/edriso/node-farm#readme",
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

@@ -2,9 +2,10 @@
 const http = require("http");
 const fs = require("fs");
 const url = require("url");
-
 // My own module
 const replaceTemplate = require("./modules/replaceTemplate");
+// 3rd party module
+const slugify = require("slugify");
 
 // Saved data that not needed to be loaded on each request
 const tempOverview = fs.readFileSync(
@@ -41,7 +42,10 @@ const server = http.createServer((req, res) => {
     // Product page
   } else if (pathname === "/products") {
     res.writeHead(200, { "Content-type": "text/html" });
-    const product = dataObj[query.id];
+    // const product = dataObj[query.id];
+    const product = dataObj.find(
+      (item) => query.id === slugify(item.productName, { lower: true })
+    );
     const output = replaceTemplate(tempProduct, product);
 
     res.end(output);
